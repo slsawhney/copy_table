@@ -1,0 +1,31 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+/bin/phpunit
+/bin/console
+/config/routes.yaml
+/config/preload.php
+/config/bundles.php
+/config/routes/framework.yaml
+/config/routes/
+/config/packages/routing.yaml
+/config/packages/framework.yaml
+/config/packages/cache.yaml
+/config/packages/
+/public/index.php
+/src/Kernel.php
+/.editorconfig
+/.env
+/.env.dev

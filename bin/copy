@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+use App\Kernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Dotenv\Dotenv;
+
+if (!is_dir(dirname(__DIR__).'/vendor')) {
+    throw new LogicException('Dependencies are missing. Try running "composer install".');
+}
+
+if (!is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')) {
+    throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
+}
+
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+
+// Load .env files for CLI.
+if (class_exists(Dotenv::class)) {
+    try {
+        (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
+    } catch (Throwable $e) {
+        // If bootEnv fails for any reason, continue; Kernel will still try to use real env vars.
+    }
+}
+
+$env = $_SERVER['APP_ENV'] ?? getenv('APP_ENV') ?: 'dev';
+$debug = (bool)($_SERVER['APP_DEBUG'] ?? getenv('APP_DEBUG') ?? ($env !== 'prod'));
+
+if (!class_exists(Application::class)) {
+    throw new RuntimeException('You need to add "symfony/framework-bundle" as a Composer dependency.');
+}
+
+$kernel = new Kernel($env, $debug);
+$application = new Application($kernel);
+$application->setAutoExit(true);
+exit($application->run());
