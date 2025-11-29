@@ -4,7 +4,7 @@
 -- We will create them only on Local database only (if doesn't exist').
 
 -- 1) feeds
-DROP TABLE IF EXISTS public.feeds CASCADE;
+-- DROP TABLE IF EXISTS public.feeds CASCADE;
 CREATE TABLE public.feeds (
   id           BIGSERIAL PRIMARY KEY,
   name         TEXT NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE public.feeds (
 );
 
 -- 2) instagram_sources (1:1 with feeds)
-DROP TABLE IF EXISTS public.instagram_sources;
+-- DROP TABLE IF EXISTS public.instagram_sources;
 CREATE TABLE public.instagram_sources (
   feed_id     BIGINT PRIMARY KEY,
   name        TEXT NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE public.instagram_sources (
 );
 
 -- 3) tiktok_sources (1:1 with feeds)
-DROP TABLE IF EXISTS public.tiktok_sources;
+-- DROP TABLE IF EXISTS public.tiktok_sources;
 CREATE TABLE public.tiktok_sources (
    feed_id     BIGINT PRIMARY KEY,
    name        TEXT NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE public.tiktok_sources (
 );
 
 -- 4) posts (many:1 feeds)
-DROP TABLE IF EXISTS public.posts;
+-- DROP TABLE IF EXISTS public.posts;
 CREATE TABLE public.posts (
   id         BIGSERIAL PRIMARY KEY,
   feed_id    BIGINT NOT NULL,
