@@ -57,26 +57,26 @@
    ```
 7. ##### Commands:
 
-   ##### for a give Feed ID
+   ##### Copy a give Feed ID
    ```shell
    php bin/copy app:copy-feed 123
    ```
    
-   ##### Only instagram for a given Feed ID
+   ##### Copy only instagram and feed for a given Feed ID
    ```shell
    php bin/copy app:copy-feed --only=instagram 123 
    ```
 
-   ##### Only tiktok for a given Feed ID
+   ##### Copy only tiktok and feed for a given Feed ID
    ```shell
    php bin/copy app:copy-feed --only=tiktok 123 
    ```
     
-   ##### Only instagram for given Feed Id with 5 posts
+   ##### Copy Only instagram for given Feed Id with 5 posts
    ```shell 
    php bin/copy app:copy-feed --only=instagram --include-posts=5 123 
    ```
-   ##### Only tiktok for given Feed Id with 5 posts
+   ##### Copy Only tiktok for given Feed Id with 5 posts
    ```shell
    php bin/copy app:copy-feed --only=tiktok --include-posts=5 123 
    ```
