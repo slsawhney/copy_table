@@ -8,18 +8,28 @@
 ### 1. Pre-Requisites
 - PHP >= 8.2,
 - Composer
+- postgres >= 15.14
 
 #### To check if PHP is installed and running:
-
-   ```sh
-     php -v
-   ```
+```shell
+  php -v
+```
 
 #### To check if Composer is installed and running:
+```shell
+  composer --version
+```
 
-   ```sh
-     composer --version
-   ```
+#### To check if Postgres is installed and running:
+##### For Mac: 
+To check Version
+```shell
+  postgres --version
+```
+To check running status
+```shell
+  brew services info postgresql@15 
+```
 
 ### 2. Project Startup
 1. #### Clone the repository:
